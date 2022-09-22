@@ -1,8 +1,7 @@
 # Claris2023
 
-Regalo de cumpleaños de Clarita 2023
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Regalo de cumpleaños de Clarita 2023.
+Buscando ideas para impresionarla en su cumpleaños.
 
 ## Development server
 
