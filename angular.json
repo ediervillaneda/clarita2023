@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "claris2023": {
+    "clarita2023": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/claris2023",
+            "outputPath": "dist/clarita2023",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "claris2023:build:production"
+              "browserTarget": "clarita2023:build:production"
             },
             "development": {
-              "browserTarget": "claris2023:build:development"
+              "browserTarget": "clarita2023:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "claris2023:build"
+            "browserTarget": "clarita2023:build"
           }
         },
         "test": {

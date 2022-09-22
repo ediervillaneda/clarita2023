@@ -1,4 +1,4 @@
-# Claris2023
+# Clarita2023
 
 Regalo de cumpleaños de Clarita 2023.
 Buscando ideas para impresionarla en su cumpleaños.
