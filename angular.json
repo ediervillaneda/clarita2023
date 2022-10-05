@@ -5,7 +5,11 @@
   "projects": {
     "clarita2023": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -23,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/styles.css"
+              "src/assets/css/styles.scss"
             ],
             "scripts": [
               "src/assets/js/heart.js"
@@ -92,7 +96,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/styles.css"
+              "src/assets/css/styles.scss"
             ],
             "scripts": [
               "src/assets/js/heart.js"

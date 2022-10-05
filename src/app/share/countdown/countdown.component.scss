@@ -1,29 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
+
+$font: 'Lato', sans-serif;
+$big: 'Montserrat', sans-serif;
+
+$red: #EF2F3C;
+$white: #F6F4F3;
+$blue: #276FBF;
+$dark: #050505;
+$yellow: #F0A202;
+
+$star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
 .countdown {
   position: relative;
   margin: auto;
   overflow: hidden;
   width: 650px;
-  /* height: 300px; */
+  height: 480px;
 }
 
 h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: $font;
   text-align: center;
-  bottom: 0;
   position: absolute;
+  bottom: 0;
   width: 100vw;
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: #F6F4F3;
+  color: $white;
 }
 
 #timer {
-  color: #F6F4F3;
+  color: $white;
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.7em;
+  font-family: $font;
+  font-size: .7em;
   letter-spacing: 5px;
   margin-top: 25%;
 }
@@ -39,80 +52,82 @@ h1 {
 }
 
 .days {
-  background: #EF2F3C;
+  background: $red;
 }
 
 .hours {
-  background: #F6F4F3;
-  color: #183059;
+  background: $white;
+  color: $dark;
 }
 
 .minutes {
-  background: #276FBF;
+  background: $blue;
 }
 
 .seconds {
-  background: #F0A202;
+  background: $yellow;
+
+  .numbers {}
 }
 
 .numbers {
-  font-family: 'Montserrat', sans-serif;
-  color: #183059;
+  font-family: $big;
+  color: $dark;
   font-size: 4em;
 }
 
 .white {
   position: absolute;
-  background: #F6F4F3;
+  background: $white;
   height: 85px;
   width: 75px;
   left: 30%;
   top: 2%;
-}
 
-.white .triangle {
-  border-bottom: 14px solid #F6F4F3;
-}
+  .triangle {
+    border-bottom: 14px solid $white;
+  }
 
-.white .string {
-  background: #F6F4F3;
-  border: 1px solid #F6F4F3;
+  .string {
+    background: $white;
+    border: 1px solid $white;
+  }
 }
 
 .red {
   position: absolute;
-  background: #EF2F3C;
+  background: $red;
   left: 18%;
   top: 9%;
   height: 65px;
   width: 70px;
-}
 
-.red .triangle {
-  border-bottom: 14px solid #EF2F3C;
-}
+  .triangle {
+    border-bottom: 14px solid $red;
+  }
 
-.red .string {
-  background: #EF2F3C;
-  border: 1px solid #EF2F3C;
+  .string {
+    background: $red;
+    border: 1px solid $red;
+  }
 }
 
 .blue {
   position: absolute;
-  background: #276FBF;
+  background: $blue;
   height: 80px;
   width: 80px;
   left: 60%;
   top: 5%;
-}
 
-.blue .triangle {
-  border-bottom: 14px solid #276FBF;
-}
+  .triangle {
+    border-bottom: 14px solid $blue;
+  }
 
-.blue .string {
-  background: #276FBF;
-  border: 1px solid #276FBF;
+  .string {
+    background: $blue;
+    border: 1px solid $blue;
+  }
 }
 
 .balloon {
@@ -129,16 +144,16 @@ h1 {
   left: 22%;
   background: #000;
   border-radius: 50%;
-}
 
-.eye:after {
-  content: '';
-  left: 35px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #000;
-  position: absolute;
+  &:after {
+    content: '';
+    left: 35px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+  }
 }
 
 .mouth {
@@ -178,9 +193,9 @@ h1 {
 .star {
   width: 20px;
   height: 20px;
-  background: #F6F4F3;
-  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background: $white;
+  -webkit-clip-path: $star;
+  clip-path: $star;
 }
 
 .star-red {
@@ -188,9 +203,9 @@ h1 {
   height: 30px;
   margin-left: 51px;
   margin-top: -5px;
-  background: #EF2F3C;
-  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background: $red;
+  -webkit-clip-path: $star;
+  clip-path: $star;
 }
 
 footer {
@@ -199,20 +214,20 @@ footer {
   right: 0;
   text-transform: uppercase;
   padding: 10px;
-  font-family: 'Lato', sans-serif;
+  font-family: $font;
   font-size: 0.7em;
-}
 
-footer p {
-  letter-spacing: 3px;
-  color: #EF2F3C;
-}
+  p {
+    letter-spacing: 3px;
+    color: $red;
+  }
 
-footer a {
-  color: #F6F4F3;
-  text-decoration: none;
-}
+  a {
+    color: $white;
+    text-decoration: none;
 
-footer a:hover {
-  color: #276FBF;
+    &:hover {
+      color: $blue;
+    }
+  }
 }

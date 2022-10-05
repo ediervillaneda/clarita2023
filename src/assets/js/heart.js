@@ -1,11 +1,9 @@
 window.onload = function () {
 
-  // const canvas = document.getElementsByClassName('alx')
   const canvas = document.querySelector(".alx");
-  const b = document.body;
 
   const a = canvas.getContext('2d');
-  console.log(a);
+
   const C = Math.cos;
   const R = Math.random;
   const v = 32 + 16 + 8;
@@ -74,7 +72,7 @@ window.onload = function () {
       }
     }
   }, 25);
-  
+
   function path(d) {
     a.fillStyle = d.f;
     a.beginPath();
