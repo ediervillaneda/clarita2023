@@ -9,8 +9,4 @@ export class HeartComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  getClass() {
-    return 'alx';
-  }
 }

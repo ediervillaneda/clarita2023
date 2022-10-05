@@ -9,21 +9,20 @@ export class CountdownComponent implements OnInit, OnDestroy {
   year = new Date().getFullYear();
   seventhOfJune = new Date(this.year, 5, 7).getTime();
   seventhOfJuneNextYear = new Date(this.year + 1, 5, 7).getTime();
-  month = new Date().getMonth();
+  month: number = new Date().getMonth();
   days: number = 0;
   daysText: string = '';
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
   id: ReturnType<typeof setTimeout> | undefined;
-  title: string = '';
 
   constructor() {
-    this.title = 'Cumpleaños de Clarita 2023';
+    this.countdown();
   }
 
   ngOnInit(): void {
-    this.id = setInterval(() => this.countdown(), 1000);
+    this.id = setInterval(() => this.countdown(), 999);
   }
 
   ngOnDestroy() {

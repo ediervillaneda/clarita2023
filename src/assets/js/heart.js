@@ -1,6 +1,6 @@
 window.onload = function () {
 
-  const canvas = document.querySelector(".alx");
+  const canvas = document.querySelector(".heart");
 
   const a = canvas.getContext('2d');
 
