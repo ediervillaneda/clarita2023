@@ -1,0 +1,17 @@
+$font: 'Lato', sans-serif;
+
+h1 {
+  font-family: $font;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  top: 98%;
+  width: 570px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #F6F4F3;
+}

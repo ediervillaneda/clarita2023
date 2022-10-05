@@ -1,12 +1,12 @@
 window.onload = function () {
 
-  const canvas = document.querySelector(".alx");
+  const canvas = document.querySelector(".heart");
 
   const a = canvas.getContext('2d');
 
   const C = Math.cos;
   const R = Math.random;
-  const v = 32 + 16 + 8;
+  const v = 56;
   const Y = 6.3;
 
   const HEIGHT = canvas.height = innerHeight;
@@ -15,18 +15,13 @@ window.onload = function () {
   let e = [];
   let h = [];
 
-  for (let i = 0; i < Y; i += 0.2) {
-    h.push([WIDTH / 2 + 210 * Math.pow(Math.sin(i), 3),
-    HEIGHT / 2 + 13 * -(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i))]);
+  const multi = 3;
+  for (let cont = 0; cont <= multi; cont++) {
+    for (let i = 0; i < Y; i += (0.2 * (cont + 1))) {
+      h.push(hPush(i, multi - cont));
+    }
   }
-  for (let i = 0; i < Y; i += 0.4) {
-    h.push([WIDTH / 2 + 150 * Math.pow(Math.sin(i), 3),
-    HEIGHT / 2 + 9 * -(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i))]);
-  }
-  for (let i = 0; i < Y; i += 0.8) {
-    h.push([WIDTH / 2 + 90 * Math.pow(Math.sin(i), 3),
-    HEIGHT / 2 + 5 * -(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i))]);
-  }
+
   for (let i = 0; i < v;) {
     let x = R() * WIDTH;
     let y = R() * HEIGHT;
@@ -44,7 +39,7 @@ window.onload = function () {
       q: ~~(R() * v),
       D: 2 * (i % 2) - 1,
       F: 0.2 * R() + 0.7,
-      f: "hsla(" + ~~H + "," + ~~S + "%," + ~~B + "%,.1)"
+      f: `hsla(${~~H},${~~S}%,${~~B}%,.5)`
     };
     e[i++] = f
   }
@@ -79,6 +74,12 @@ window.onload = function () {
     a.arc(d.x, d.y, d.R, 0, Y, 1);
     a.closePath();
     a.fill()
+  }
+
+  function hPush(i, m) {
+    let wi = WIDTH / 2 + (30 + (60 * m)) * Math.pow(Math.sin(i), 3);
+    let he = HEIGHT / 2 + (1 + (4 * m)) * -(15 * C(i) - 5 * C(2 * i) - 2 * C(3 * i) - C(4 * i));
+    return [wi, he];
   }
 };
 
