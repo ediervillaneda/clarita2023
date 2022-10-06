@@ -24,7 +24,7 @@ jobs:
         run: |
           npm install
           npm run-script deploy
-      - name: Deploy
+      - name: 🚀 Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
