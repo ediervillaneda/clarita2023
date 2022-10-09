@@ -1,0 +1,26 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100% !important;
+  font-size: 62.5% !important;
+  overflow: hidden !important;
+
+  @media (max-width: 990px) {
+    font-size: 50% !important;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40% !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30% !important;
+  }
+}

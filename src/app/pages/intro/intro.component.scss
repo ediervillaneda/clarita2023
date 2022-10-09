@@ -1,21 +1,18 @@
 html {
-  // display: grid !important;
-  // min-height: 100% !important;
-  // overflow: hidden !important;
-}
-body{
-  overflow: hidden !important ;
-}
-
-.intro {
-  padding: 0 !important;
-  margin: 0 !important;
   display: grid !important;
-  overflow: hidden !important;
-  height: 100%;
 }
 
-h1 {
+body {
+  .intro {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: grid !important;
+    overflow: hidden !important;
+    height: 100%;
+  }
+}
+
+.message-footer {
   font-family: 'Lato', sans-serif;
   text-align: center;
   position: absolute;
