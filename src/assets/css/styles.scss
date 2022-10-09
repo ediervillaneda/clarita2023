@@ -1,2 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+html,
+body {
+  height: 100% !important;
+  font-size: 62.5%;
+  overflow: hidden;
+
+  @media (max-width: 990px) {
+    font-size: 50%;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30%;
+  }
+}

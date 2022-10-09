@@ -1,4 +1,4 @@
-jQuery(function () {
+jQuery(function() {
 
   var $page = $(".page"),
     pages = $page.length,

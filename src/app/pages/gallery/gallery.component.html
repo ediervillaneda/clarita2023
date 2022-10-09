@@ -1,95 +1,22 @@
-<swiper [config]="config" (slideChange)="onSlideChange()" class="swiper-container">
-  <ng-template swiperSlide>
-    <div class="container-general">
-      <div class="gallery-wrap wrap-effect-1">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-      </div>
+<div class="scene">
+  <!-- page start -->
+  <div *ngFor="let n of number" class="page page-{{n}} {{ n === 1 ? 'active' : '' }}">
+    <div class="page--rotater"></div>
+    <div class="page--content">
+      <app-slide1 [number]="n"></app-slide1>
     </div>
-  </ng-template>
-  <ng-template swiperSlide><div class="container-general">
-    <div class="gallery-wrap wrap-effect-2">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
+  </div>
+  <!-- page end -->
+  <div class="rt-point">
+    <span *ngFor="let n of number" class="page-number page-number-{{n}} {{ n === 1 ? 'active' : '' }}">{{n}}</span>
+  </div>
+  <!-- footer start -->
+  <div class="footer">
+    <div class="nav">
+      <ul>
+        <li *ngFor="let n of number" class="nav--btn nav--btn-{{n}} {{ n === 1 ? 'active' : '' }}" [attr.data-page]="n"></li>
+      </ul>
     </div>
-  </div></ng-template>
-  <ng-template swiperSlide><div class="container-general">
-    <div class="gallery-wrap wrap-effect-3">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-    </div>
-  </div></ng-template>
-  <ng-template swiperSlide><div class="container-general">
-    <div class="gallery-wrap wrap-effect-4">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-    </div>
-  </div></ng-template>
-</swiper>
-<!--
-<div class="heading">Scroll to see more</div>
-<div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="container-general">
-            <div class="gallery-wrap wrap-effect-1">
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="container-general">
-            <div class="gallery-wrap wrap-effect-2">
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="container-general">
-            <div class="gallery-wrap wrap-effect-3">
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="container-general wrap-effect-4">
-            <div class="gallery-wrap">
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-            Inspire by
-          <a class="inspire" href="https://dribbble.com/galshir" target="_blank"> &nbsp Galshir arts</a>
-          . Thank you
-        </div>
-      </div>
-    </div> -->
+  </div>
+  <!-- footer end -->
+</div>
