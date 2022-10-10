@@ -7,8 +7,13 @@ declare var $: any;
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-  number: number[] = [1, 2, 3, 4];
-  constructor() {}
+  items: number = 4;
+  number: number[] = [];
+  constructor() {
+    for (let n = 0; n < this.items; n++) {
+      this.number[n] = n + 1;
+    }
+  }
 
   ngOnInit(): void {}
 }

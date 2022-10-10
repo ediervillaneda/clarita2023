@@ -3,8 +3,7 @@ jQuery(function () {
   const $page = $(".page");
   if ($page.length != 0) {
     const pages = $page.length;
-    let scrolling = false;
-    let curPage = 1;
+    let scrolling = false, curPage = 1;
 
     /* PLEASE DON'T LOOK AT THIS */
     function svgPagination(prev, next, dir, revDir, divider) {
@@ -70,18 +69,15 @@ jQuery(function () {
       if (direction === "down") {
         $prevActive.addClass("removing down");
       }
+
       if (direction === "up") {
         $newActive.addClass("removing up")
       }
       while (--tempPage) {
         $(`.page-${tempPage}`).addClass("inactive");
       }
-      setTimeout(function () {
-        $page.removeClass("removing up");
-      }, 700);
-      setTimeout(function () {
-        scrolling = false;
-      }, 1000);
+      setTimeout(function () { $page.removeClass("removing up"); }, 700);
+      setTimeout(function () { scrolling = false; }, 1000);
     }
 
     function navigateUp() {
@@ -110,14 +106,14 @@ jQuery(function () {
 
     $(document).on("click", ".nav--btn:not(.active)", function () {
       if (scrolling) return;
-      let nextPage = +$(this).attr("data-page"),
-        dir = (curPage < nextPage) ? "down" : "up";
+      let nextPage = +$(this).attr("data-page")
+      let dir = (curPage < nextPage) ? "down" : "up";
       pagination(nextPage, dir);
     });
 
     function between(dir, point, duration = 150, delay = 150, rDelay = 750, easing = "linear") {
-      let w = $(".nav--btn").outerWidth() / 2;
-      const strokeW = 2;
+
+      const w = $(".nav--btn").outerWidth() / 2, strokeW = 2;
       let d = ["0," + w, w + "," + w];
 
       if (dir) d.reverse();
@@ -128,33 +124,29 @@ jQuery(function () {
 
       svg.width(w).height(2 * w);
 
-      let $path = $(svg).find("path"),
-        len = $path[0].getTotalLength();
+      let $path = $(svg).find("path"), len = $path[0].getTotalLength();
 
       $path.velocity({ strokeDasharray: len, strokeDashoffset: len }, { duration: 0 });
 
       $(`.nav--btn-${point}`).append(svg);
       $(svg).css({ "left": (w * 2 - 2) });
 
-      $path.delay(delay).velocity({ strokeDashoffset: 0 }, { duration: duration, easing: easing });
+      $path.delay(delay).velocity({ strokeDashoffset: 0 }, { duration, easing });
       setTimeout(function () {
         $(svg).css("transform", "rotate(180deg)");
-        $path.velocity({ strokeDashoffset: len }, { duration: duration, easing: easing });
+        $path.velocity({ strokeDashoffset: len }, { duration, easing });
+        console.log(len);
       }, rDelay);
 
-      setTimeout(function () {
-        $(svg).remove();
-      }, rDelay + duration + 10);
+      setTimeout(function () { $(svg).remove(); }, rDelay + duration + 10);
 
     }
 
     function createSvg(dir, point, duration = 600, delay = 0, easing = "linear") {
 
-      let wh = $(".nav--btn").outerWidth()
-      const strokeW = 2;
-      let dTop = ["0," + wh / 2, "0,0", wh + ",0", wh + "," + wh / 2],
-        dBot = ["0," + wh / 2, "0," + wh, wh + "," + wh, wh + "," + wh / 2],
-        dataDir = (dir) ? 1 : 0;
+      const wh = $(".nav--btn").outerWidth(), strokeW = 2, dataDir = (dir) ? 1 : 0;
+      let dTop = ["0," + wh / 2, "0,0", wh + ",0", wh + "," + wh / 2];
+      let dBot = ["0," + wh / 2, "0," + wh, wh + "," + wh, wh + "," + wh / 2];
 
       if (dir) {
         dTop.reverse();
@@ -173,7 +165,7 @@ jQuery(function () {
         $(this).velocity({ strokeDasharray: len, strokeDashoffset: len }, { duration: 0 });
       });
 
-      $(".nav--btn-" + point).append(svg);
+      $(`.nav--btn-${point}`).append(svg);
 
       $(svg).find("path").each(function () {
         $(this).delay(delay).velocity({ strokeDashoffset: 0 }, { duration: duration, easing: easing });
@@ -183,24 +175,17 @@ jQuery(function () {
 
     function destroySvg(dir, point, duration = 600, delay = 300, easing = "linear") {
 
-      let $svg = $(`.nav--btn-${point} svg`),
-        dataDir = +$svg.attr("data-dir");
+      let $svg = $(`.nav--btn-${point} svg`), dataDir = +$svg.attr("data-dir");
 
-      setTimeout(function () {
-        if (dataDir !== dir) $svg.css("transform", "rotate(180deg)");
-      }, delay);
+      setTimeout(function () { if (dataDir !== dir) $svg.css("transform", "rotate(180deg)"); }, delay);
 
       $svg.find("path").each(function () {
-        let $path = $(this),
-          len = $path[0].getTotalLength();
-        $svg = $path.parent(),
-          $path.delay(delay).velocity({ strokeDashoffset: len }, { duration: duration, easing: easing });
+        const $path = $(this), len = $path[0].getTotalLength();
+        $svg = $path.parent();
+        $path.delay(delay).velocity({ strokeDashoffset: len }, { duration: duration, easing: easing });
       });
 
-      setTimeout(function () {
-        $svg.remove();
-      }, duration + delay + 10);
-
+      setTimeout(function () { $svg.remove(); }, duration + delay + 10);
     }
 
     createSvg(0, 1, 1);

@@ -3,7 +3,7 @@
   <div *ngFor="let n of number" class="page page-{{n}} {{ n === 1 ? 'active' : '' }}">
     <div class="page--rotater"></div>
     <div class="page--content">
-      <app-slide1 [number]="n"></app-slide1>
+      <app-slide [number]="n"></app-slide>
     </div>
   </div>
   <!-- page end -->

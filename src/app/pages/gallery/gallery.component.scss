@@ -1,11 +1,12 @@
 // @import "compass/css3";
 
-$navElWidth: 3rem; // change this for different nav width/height
+$navElWidth: 1.5rem; // change this for different nav width/height
 $numberOfNavEl: 4;
-$navTotalWidth: $numberOfNavEl * $navElWidth + $navElWidth / 2 * ($numberOfNavEl - 1);
-$navBorderRadius: 2px;
+$navTotalWidth: ($numberOfNavEl * $navElWidth) + $navElWidth / 2 * ($numberOfNavEl + 1);
+$navBorderRadius: 3px;
 $totalTime: 1s;
 $textHideTime: 0.3s;
+$pageNumberSize: 1.5rem;
 
 @font-face {
   src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/SouthRose.ttf');
@@ -56,7 +57,7 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 10rem);
+  height: calc(100% - 5rem);
   transition: transform ($totalTime - $textHideTime);
   will-change: transform;
   transform-origin: 50% 100%;
@@ -97,11 +98,11 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 15rem 5rem;
+    padding: 8rem 5rem;
     font-size: 3rem;
 
     @media (max-width: 990px) {
-      padding: 10rem 2.5rem;
+      padding: 3rem 2.5rem;
     }
 
     h1 {
@@ -158,10 +159,10 @@ ul {
 .rt-point {
   z-index: 2000;
   position: absolute;
-  bottom: 8rem;
+  bottom: 4rem;
   left: calc(50% - 2rem);
-  width: 4rem;
-  height: 4rem;
+  width: calc($pageNumberSize + 1rem);
+  height: calc($pageNumberSize + 1rem);
   border-radius: 50%;
   border: 3px solid #fff;
   background: #DCC7BE;
@@ -170,11 +171,11 @@ ul {
   .page-number {
     display: block;
     position: absolute;
-    top: calc(50% - 1.5rem);
-    left: calc(50% - 1.5rem);
-    width: 3rem;
+    top: calc(50% - ($pageNumberSize / 2));
+    left: calc(50% - ($pageNumberSize / 2));
+    width: $pageNumberSize;
     text-align: center;
-    font-size: 3rem;
+    font-size: $pageNumberSize;
     line-height: 1;
     font-family: Metropolis;
     font-weight: bold;
@@ -195,7 +196,7 @@ ul {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10rem;
+  height: 5rem;
   background: #0D1B1E;
 }
 
@@ -204,7 +205,7 @@ ul {
   position: relative;
   width: $navTotalWidth;
   height: $navElWidth;
-  margin: 4rem auto;
+  margin: 2rem auto;
 
   &:after {
     content: "";
@@ -223,7 +224,7 @@ ul {
     display: block;
     width: $navElWidth;
     height: $navElWidth;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     margin-right: $navElWidth / 2;
     cursor: pointer;
     transition: all $totalTime;
@@ -232,8 +233,8 @@ ul {
       content: "";
       position: absolute;
       display: block;
-      width: 85%;
-      height: 85%;
+      width: 100%;
+      height: 100%;
       left: 50%;
       top: 50%;
       background: #fff;
