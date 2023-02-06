@@ -1,0 +1,22 @@
+<div class="scene">
+  <!-- page start -->
+  <div *ngFor="let n of number" class="page page-{{n}} {{ n === 1 ? 'active' : '' }}">
+    <div class="page--rotater"></div>
+    <div class="page--content">
+      <app-slide [number]="n"></app-slide>
+    </div>
+  </div>
+  <!-- page end -->
+  <div class="rt-point">
+    <span *ngFor="let n of number" class="page-number page-number-{{n}} {{ n === 1 ? 'active' : '' }}">{{n}}</span>
+  </div>
+  <!-- footer start -->
+  <div class="footer">
+    <div class="nav">
+      <ul>
+        <li *ngFor="let n of number" class="nav--btn nav--btn-{{n}} {{ n === 1 ? 'active' : '' }}" [attr.data-page]="n"></li>
+      </ul>
+    </div>
+  </div>
+  <!-- footer end -->
+</div>

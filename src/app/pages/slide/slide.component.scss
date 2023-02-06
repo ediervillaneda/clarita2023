@@ -1,0 +1,141 @@
+.container-general {
+  margin: 0 auto;
+
+  .gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+
+    .item {
+      flex: 1;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 0.8s ease;
+
+      &:hover {
+        flex: 7;
+      }
+    }
+  }
+}
+
+// Image Accordions Effect 1
+.wrap-effect-1 {
+  .item {
+    &:first-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap2%2F20220109_135126.jpg?alt=media&token=4adc6727-045f-4a92-aeea-ad3045670a1a');
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap1%2F20220813_081620.jpg?alt=media&token=a4f2768b-fa5f-4bb2-a2ef-4512bd2278c9');
+    }
+
+    &:nth-of-type(3) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap3%2F20211128_130453.jpg?alt=media&token=57d46a7e-3161-4c28-bc65-cf41ad9203df');
+    }
+
+    &:nth-of-type(4) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap3%2F20220109_134642.jpg?alt=media&token=9bf7cdc5-2f00-4be1-924a-62239af4cb2f');
+    }
+
+    &:last-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap1%2F20220816_105809.jpg?alt=media&token=32cbbf38-85e2-4b1c-8db1-b6e10e06f796');
+    }
+  }
+}
+
+// Image Accordions Effect 2
+.wrap-effect-2 {
+  .item {
+    &:hover {
+      transform: translate3d(0, 0, 100px);
+      box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+      filter: saturate(2) contrast(120%);
+    }
+
+    &:first-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap1%2F20220808_175941.jpg?alt=media&token=46bea6d9-fb15-43a2-8841-7fffbf6318b1');
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap2%2F20220110_084607.jpg?alt=media&token=9cc5ffc5-e7c5-4492-9807-386695817aca');
+    }
+
+    &:nth-of-type(3) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap2%2F20220206_094820.jpg?alt=media&token=a1146890-509c-4aec-b994-a98d3db5b16a');
+    }
+
+    &:nth-of-type(4) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap2%2F20220409_175715.jpg?alt=media&token=8181fb67-4852-4b49-a58b-2ca86854a607');
+    }
+
+    &:last-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap2%2F20220604_153140.jpg?alt=media&token=3e1eba30-1c94-4bc8-8bc3-8ab8dd4bc14a');
+    }
+  }
+}
+
+// Image Accordions Effect 3
+.wrap-effect-3 {
+  .item {
+    &:hover {
+      animation: rotate 0.7s ease-in-out both;
+      border-radius: 10px;
+      border: 1px solid gray;
+    }
+
+    &:first-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap3%2F20211103_102739.jpg?alt=media&token=ca97e79f-b191-4424-a72c-0de8959661e2');
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap3%2F20211104_112310.jpg?alt=media&token=6154eaaf-f905-4bff-bdb2-46f2ca016f9e');
+    }
+
+    &:nth-of-type(3) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap3%2F20211105_145737.jpg?alt=media&token=db476b89-549c-4c5c-be61-fb9778592e8b');
+    }
+
+    &:nth-of-type(4) {
+
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap1%2F20220811_111307.jpg?alt=media&token=70720b4f-b05a-4d9f-94c9-0c6c70ee7e7c');
+    }
+
+    &:last-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap1%2F20220812_114218.jpg?alt=media&token=39215ba8-b854-45e0-8a48-071fcca05035');
+    }
+  }
+}
+
+// Image Accordions Effect 4
+.wrap-effect-4 {
+  .item {
+    &:hover {
+      box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+      filter: saturate(2) contrast(120%);
+    }
+
+    &:first-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap4%2F20210130_203627.jpg?alt=media&token=c94875d4-19b9-4670-abc7-f9129e75a5e1');
+    }
+
+    &:nth-of-type(2) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap4%2F20210226_210847.jpg?alt=media&token=cabcc33f-d7bd-4832-83b3-4a08338feddd');
+    }
+
+    &:nth-of-type(3) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap4%2F20210619_163647.jpg?alt=media&token=3c3985ad-16ca-4efe-a539-1b3457a0c9aa');
+    }
+
+    &:nth-of-type(4) {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap4%2F20211031_221139.jpg?alt=media&token=aefcba69-f902-41d3-8118-7eb4b8425783');
+    }
+
+    &:last-of-type {
+      background-image: url('https://firebasestorage.googleapis.com/v0/b/clarita2023-9b0bc.appspot.com/o/wrap4%2F20211102_111809.jpg?alt=media&token=46176ba5-4d7b-4ff4-9224-326a8d88abe7');
+    }
+  }
+}

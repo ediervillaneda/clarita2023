@@ -26,10 +26,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Cumpleaños de Clarita 2023');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('clarita2023 app is running!');
-  });
 });

@@ -1,17 +1,42 @@
-$font: 'Lato', sans-serif;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-h1 {
-  font-family: $font;
+html,
+body {
+  height: 100% !important;
+  font-size: 62.5% !important;
+  overflow: hidden !important;
+
+  @media (max-width: 990px) {
+    font-size: 50% !important;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40% !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30% !important;
+  }
+}
+
+h1.message-footer {
+  font-family: 'Lato', sans-serif;
   text-align: center;
-  position: relative;
+  position: absolute;
   overflow: hidden;
-  top: 98%;
-  width: 570px;
+  bottom: 2vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   margin: auto;
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 5px;
-  color: #F6F4F3;
+  color: #F6F4F3 !important;
 }
