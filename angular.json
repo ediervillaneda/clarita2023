@@ -34,7 +34,8 @@
               "./node_modules/velocity-animate/velocity.min.js",
               "./node_modules/velocity-animate/velocity.ui.min.js",
               "src/assets/js/heart.js",
-              "src/assets/js/slide.js"
+              "src/assets/js/slide.js",
+              "src/assets/js/christmas.js"
             ]
           },
           "configurations": {
@@ -107,7 +108,8 @@
               "./node_modules/velocity-animate/velocity.min.js",
               "./node_modules/velocity-animate/velocity.ui.min.js",
               "src/assets/js/heart.js",
-              "src/assets/js/slide.js"
+              "src/assets/js/slide.js",
+              "src/assets/js/christmas.js"
             ]
           }
         }

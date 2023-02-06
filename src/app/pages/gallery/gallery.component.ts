@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-declare var $: any;
+declare const $: any;
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent {
   items: number = 4;
   number: number[] = [];
   constructor() {
@@ -15,5 +15,4 @@ export class GalleryComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
 }

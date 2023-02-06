@@ -14,7 +14,6 @@ export class CountdownComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // this.id = setInterval(() => this.countdown(), 999);
     this.id = setInterval(() => this._counter.countdown(), 999);
   }
 

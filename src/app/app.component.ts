@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CounterService } from './services/counter.service';
+import {Component} from '@angular/core';
+import {CounterService} from './services/counter.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,11 @@ import { CounterService } from './services/counter.service';
 })
 export class AppComponent {
   title = 'Cumpleaños de Clarita 2023';
-  isComplete: boolean = false;
+  status: number = 0;
 
   constructor(public _counter: CounterService) {
     this._counter.countdown();
-    this.isComplete = !_counter.counter.complete;
+    this.status = 2;
+    // this.status = _counter.counter.status;
   }
 }

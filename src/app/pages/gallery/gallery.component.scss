@@ -2,7 +2,7 @@
 
 $navElWidth: 1.5rem; // change this for different nav width/height
 $numberOfNavEl: 4;
-$navTotalWidth: ($numberOfNavEl * $navElWidth) + $navElWidth / 2 * ($numberOfNavEl + 1);
+$navTotalWidth: calc(($numberOfNavEl * $navElWidth) + $navElWidth / 2 * ($numberOfNavEl + 1));
 $navBorderRadius: 3px;
 $totalTime: 1s;
 $textHideTime: 0.3s;
@@ -225,7 +225,7 @@ ul {
     width: $navElWidth;
     height: $navElWidth;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    margin-right: $navElWidth / 2;
+    margin-right: calc($navElWidth / 2);
     cursor: pointer;
     transition: all $totalTime;
 

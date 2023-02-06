@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { Counter } from '../interfaces/counter.interface';
+import {Counter} from '../interfaces/counter.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CounterService {
   year = new Date().getFullYear();
-  seventhOfJune = new Date(this.year, 5, 7).getTime();
-  seventhOfJuneNextYear = new Date(this.year + 1, 5, 7).getTime();
+  seventhOfJune = new Date(this.year, 5, 7, 7, 30).getTime();
+  seventhOfJuneNextYear = new Date(this.year + 1, 5, 7, 7, 30).getTime();
 
   counter: Counter = {
     days: 0,
@@ -16,7 +16,7 @@ export class CounterService {
     minutes: 0,
     seconds: 0,
     daysText: '',
-    complete: false,
+    status: 0
   };
 
   constructor() {
@@ -48,7 +48,13 @@ export class CounterService {
     if (this.counter.days == 1) {
       this.counter.daysText = 'dia';
     }
-    this.counter.complete = diff <= 0 ? true : false;
+
+
+    if (month == 12) {
+      this.counter.status = 2;
+    } else {
+      this.counter.status = diff <= 0 ? 1 : 0;
+    }
 
   }
 }

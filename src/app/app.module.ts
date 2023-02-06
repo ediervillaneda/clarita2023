@@ -1,34 +1,33 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { environment } from '../environments/environment';
-// import { initializeApp } from "firebase/app";
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeartComponent } from './share/heart/heart.component';
-import { CountdownComponent } from './share/countdown/countdown.component';
-import { GalleryComponent } from './pages/gallery/gallery.component';
-import { Slide1Component } from './pages/slide1/slide1.component';
-import { IntroComponent } from './pages/intro/intro.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HeartComponent} from './share/heart/heart.component';
+import {CountdownComponent} from './share/countdown/countdown.component';
+import {GalleryComponent} from './pages/gallery/gallery.component';
+import {SlideComponent} from './pages/slide/slide.component';
+import {IntroComponent} from './pages/intro/intro.component';
+import {ChristmasComponent} from "./share/christmas/christmas.component";
+import {NavidadComponent} from './pages/navidad/navidad.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeartComponent,
+    ChristmasComponent,
     CountdownComponent,
     GalleryComponent,
-    Slide1Component,
+    SlideComponent,
     IntroComponent,
+    NavidadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

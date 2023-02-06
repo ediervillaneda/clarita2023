@@ -1,6 +1,12 @@
-<ng-template [ngIf]="isComplete" [ngIfElse]="notComplete">
+<!--Regalo-->
+<ng-template [ngIf]="status == 1">
   <app-gallery></app-gallery>
 </ng-template>
-<ng-template #notComplete>
+<!--Corazon-->
+<ng-template [ngIf]="status == 0">
   <app-intro></app-intro>
+</ng-template>
+<!--Navidad-->
+<ng-template [ngIf]="status == 2">
+  <app-navidad></app-navidad>
 </ng-template>

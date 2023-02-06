@@ -4,5 +4,5 @@ export interface Counter {
   minutes: number;
   seconds: number;
   daysText: string;
-  complete: boolean;
+  status: number;
 }

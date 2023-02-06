@@ -12,8 +12,6 @@ window.onload = function () {
     const v = 56;
     const Y = 6.3;
 
-
-
     let e = [];
     let h = [];
 
@@ -69,7 +67,6 @@ window.onload = function () {
         }
       }
     }, 25);
-
 
     function path(d) {
       a.fillStyle = d.f;
