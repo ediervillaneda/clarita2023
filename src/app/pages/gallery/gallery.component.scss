@@ -1,0 +1,285 @@
+// @import "compass/css3";
+
+$navElWidth: 1.5rem; // change this for different nav width/height
+$numberOfNavEl: 4;
+$navTotalWidth: calc(($numberOfNavEl * $navElWidth) + $navElWidth / 2 * ($numberOfNavEl + 1));
+$navBorderRadius: 3px;
+$totalTime: 1s;
+$textHideTime: 0.3s;
+$pageNumberSize: 1.5rem;
+
+@font-face {
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/SouthRose.ttf');
+  font-family: SouthRose;
+}
+
+@font-face {
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/pirou.otf');
+  font-family: Metropolis;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 62.5% !important;
+
+  @media (max-width: 990px) {
+    font-size: 50% !important;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40% !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30% !important;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.scene {
+  position: relative;
+  height: 100%;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 5rem);
+  transition: transform ($totalTime - $textHideTime);
+  will-change: transform;
+  transform-origin: 50% 100%;
+
+  &.inactive {
+    transform: rotate(180deg);
+  }
+
+  &.removing {
+    h1 {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  &.down {
+    transition-delay: $textHideTime;
+  }
+
+  &.up {
+
+    h1 {
+      transition: all 0s !important;
+    }
+  }
+
+  &--rotater {
+    position: absolute;
+    top: -250%;
+    left: -175%;
+    width: 450%;
+    height: 350%;
+  }
+
+  &--content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8rem 5rem;
+    font-size: 3rem;
+
+    @media (max-width: 990px) {
+      padding: 3rem 2.5rem;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 8rem;
+      font-family: SouthRose;
+      text-transform: uppercase;
+      transition: transform $textHideTime, opacity $textHideTime;
+      will-change: transform, opacity;
+    }
+  }
+
+  &.page-1 {
+    z-index: 10;
+
+    .page--rotater {
+      background: #922D50;
+    }
+  }
+
+  &.page-2 {
+    z-index: 9;
+
+    .page--rotater {
+      background: #9D8420;
+    }
+  }
+
+  &.page-3 {
+    z-index: 8;
+
+    .page--rotater {
+      background: #4B2840;
+    }
+  }
+
+  &.page-4 {
+    z-index: 7;
+
+    .page--rotater {
+      background: #204442;
+    }
+  }
+
+  &.page-5 {
+    z-index: 6;
+
+    .page--rotater {
+      background: #324A5F;
+    }
+  }
+}
+
+.rt-point {
+  z-index: 2000;
+  position: absolute;
+  bottom: 4rem;
+  left: calc(50% - 2rem);
+  width: calc($pageNumberSize + 1rem);
+  height: calc($pageNumberSize + 1rem);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background: #DCC7BE;
+  overflow: hidden;
+
+  .page-number {
+    display: block;
+    position: absolute;
+    top: calc(50% - ($pageNumberSize / 2));
+    left: calc(50% - ($pageNumberSize / 2));
+    width: $pageNumberSize;
+    text-align: center;
+    font-size: $pageNumberSize;
+    line-height: 1;
+    font-family: Metropolis;
+    font-weight: bold;
+    transition: transform $totalTime;
+    will-change: transform;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        margin-left: 5rem * ($i - 1);
+      }
+    }
+  }
+}
+
+.footer {
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background: #0D1B1E;
+}
+
+.nav {
+  z-index: 3000;
+  position: relative;
+  width: $navTotalWidth;
+  height: $navElWidth;
+  margin: 2rem auto;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  ul {
+    z-index: 100;
+    position: relative;
+  }
+
+  &--btn {
+    position: relative;
+    float: left;
+    display: block;
+    width: $navElWidth;
+    height: $navElWidth;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: calc($navElWidth / 2);
+    cursor: pointer;
+    transition: all $totalTime;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      background: #fff;
+      transition: all $totalTime;
+      will-change: transform, opacity;
+      transform: translateX(-50%) translateY(-50%) scale(0.5);
+      opacity: 0;
+    }
+
+    &.active:before,
+    &:hover:before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+
+    &:hover:before {
+      background-color: #52EAD2;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.pathIt-svg {
+  z-index: 5000;
+  position: absolute;
+  top: -$navBorderRadius;
+  left: -$navBorderRadius;
+}
+
+.check-out {
+  margin-top: 3rem;
+  color: #fff;
+  font-family: Metropolis;
+
+  a {
+    color: rgba(255, 170, 170, 1);
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
+  }
+}

@@ -1,3 +1,12 @@
-<app-heart></app-heart>
-<app-countdown></app-countdown>
-<h1>{{ title }}</h1>
+<!--Regalo-->
+<ng-template [ngIf]="status == 1">
+  <app-gallery></app-gallery>
+</ng-template>
+<!--Corazon-->
+<ng-template [ngIf]="status == 0">
+  <app-intro></app-intro>
+</ng-template>
+<!--Navidad-->
+<ng-template [ngIf]="status == 2">
+  <app-navidad></app-navidad>
+</ng-template>

@@ -30,7 +30,12 @@
               "src/assets/css/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/heart.js"
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/velocity-animate/velocity.min.js",
+              "./node_modules/velocity-animate/velocity.ui.min.js",
+              "src/assets/js/heart.js",
+              "src/assets/js/slide.js",
+              "src/assets/js/christmas.js"
             ]
           },
           "configurations": {
@@ -99,7 +104,12 @@
               "src/assets/css/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/heart.js"
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/velocity-animate/velocity.min.js",
+              "./node_modules/velocity-animate/velocity.ui.min.js",
+              "src/assets/js/heart.js",
+              "src/assets/js/slide.js",
+              "src/assets/js/christmas.js"
             ]
           }
         }

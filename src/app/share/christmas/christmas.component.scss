@@ -1,0 +1,17 @@
+$width: 500px;
+$heigth: 500px;
+$scala: .7;
+
+.christmas {
+  z-index: -999;
+  position: absolute;
+  margin: auto;
+  overflow: hidden;
+  background: black;
+  //display: block;
+  width: $width;
+  height: $heigth;
+  bottom: 0px;
+  transform: scale($scala);
+  transform: translate(calc(50% - ($width * $scala)), calc(100% - ($heigth * $scala)));
+}
