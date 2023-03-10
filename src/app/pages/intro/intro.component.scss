@@ -2,12 +2,12 @@ html {
   display: grid !important;
 }
 
-body {
-  .intro {
-    padding: 0 !important;
-    margin: 0 !important;
-    display: grid !important;
-    overflow: hidden !important;
-    height: 100%;
-  }
+
+.intro {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: grid !important;
+  overflow: hidden !important;
+  height: 100%;
+  background-color: #c33 !important;
 }
