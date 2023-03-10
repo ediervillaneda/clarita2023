@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {CounterService} from './services/counter.service';
+import { Component } from '@angular/core';
+import { CounterService } from './services/counter.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,6 @@ export class AppComponent {
 
   constructor(public _counter: CounterService) {
     this._counter.countdown();
-    this.status = 2;
-    // this.status = _counter.counter.status;
+    this.status = _counter.counter.status;
   }
 }
