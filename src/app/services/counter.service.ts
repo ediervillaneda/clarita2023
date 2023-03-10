@@ -37,7 +37,6 @@ export class CounterService {
       diff = this.seventhOfJune - today;
     }
 
-    // math
     this.counter.days = Math.floor(diff / (1000 * 60 * 60 * 24));
     this.counter.hours = Math.floor(
       (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -49,8 +48,7 @@ export class CounterService {
       this.counter.daysText = 'dia';
     }
 
-
-    if (month == 12) {
+    if (month >= 3) {
       this.counter.status = 2;
     } else {
       this.counter.status = diff <= 0 ? 1 : 0;
