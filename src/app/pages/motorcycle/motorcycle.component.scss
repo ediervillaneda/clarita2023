@@ -322,13 +322,8 @@ h1 {
 
 .tire:nth-child(2) {
   right: 0;
-
-  &:before,
-  &:after {
-    transform: rotateZ(-20deg);
-  }
+  &:before, &:after { transform: rotateZ(-20deg); }
 }
-
 
 $randomNumber: random(3);
 .smoke {
@@ -355,50 +350,19 @@ $randomNumber: random(3);
 }
 
 @keyframes ride {
-
-  0%,
-  100% {
-    transform: translateY(0px) rotateZ(0deg);
-  }
-
-  33% {
-    transform: translateY(-1px) rotateZ(90deg);
-  }
-
-  50% {
-    transform: translateY(2px) rotateZ(180deg);
-  }
-
-  75% {
-    transform: translateY(-1px) rotateZ(270deg);
-  }
+  0%,  100% { transform: translateY(0px) rotateZ(0deg); }
+  33% { transform: translateY(-1px) rotateZ(90deg); }
+  50% { transform: translateY(2px) rotateZ(180deg); }
+  75% { transform: translateY(-1px) rotateZ(270deg); }
 }
 
 @keyframes shake {
-
-  0%,
-  100% {
-    transform: rotateZ(0deg);
-  }
-
-  33% {
-    transform: rotateZ(-5deg);
-  }
-
-  66% {
-    transform: rotateZ(5deg);
-  }
+  0%, 100% { transform: rotateZ(0deg); }
+  33% { transform: rotateZ(-5deg); }
+  66% { transform: rotateZ(5deg); }
 }
 
 @keyframes fly {
-  0% {
-    opacity: 1;
-  }
-
-  25%,
-  100% {
-    opacity: 0;
-    top: 80px;
-    left: -110px;
-  }
+  0% { opacity: 1; }
+  25%, 100% { opacity: 0; top: 80px; left: -110px; }
 }
