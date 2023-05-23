@@ -108,6 +108,16 @@
               "src/assets/js/slide.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "clarita2023:build:production",
+            "firebaseProject": "clarita2023-9b0bc",
+            "firebaseHostingSite": "clarita2023-9b0bc"
+          }
         }
       }
     }

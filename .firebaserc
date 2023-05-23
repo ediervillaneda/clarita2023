@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "clarita2023-9b0bc"
+  },
+  "targets": {
+    "clarita2023-9b0bc": {
+      "hosting": {
+        "clarita2023": [
+          "clarita2023-9b0bc"
+        ]
+      }
+    }
   }
 }

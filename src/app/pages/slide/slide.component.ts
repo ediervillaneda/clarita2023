@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { ImagesService } from 'src/app/services/images.service';
 
 @Component({
   selector: 'app-slide',
@@ -12,12 +13,11 @@ export class SlideComponent {
   subscription: any;
   constructor(private _storage: AngularFireStorage) {
     console.log(this.number);
-
-    this.getVideoList();
+    this.getImageList();
   }
 
-  async getVideoList(): Promise<void> {
-    const directory = 'wrap1/';
+  async getImageList(): Promise<void> {
+    const directory = `wrap${this.number}/`;
     const listRef = this._storage.ref(directory);
     //Can't make the sample code work here
 
