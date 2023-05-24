@@ -12,6 +12,6 @@ export class AppComponent {
 
   constructor(public _counter: CounterService) {
     this._counter.countdown();
-    this.status = _counter.counter.status;
+    this.status = 1;
   }
 }

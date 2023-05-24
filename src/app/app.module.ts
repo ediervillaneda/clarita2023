@@ -12,6 +12,7 @@ import { SlideComponent } from './pages/slide/slide.component';
 import { IntroComponent } from './pages/intro/intro.component';
 import { MotorcycleComponent } from './pages/motorcycle/motorcycle.component';
 import { environment } from '../environments/environment';
+import { SlideshowComponent } from './pages/slideshow/slideshow.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { environment } from '../environments/environment';
     SlideComponent,
     IntroComponent,
     MotorcycleComponent,
+    SlideshowComponent,
   ],
   imports: [
     BrowserModule,
