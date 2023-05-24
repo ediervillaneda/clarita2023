@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
-import { Renderer2, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-slideshow',
@@ -45,20 +43,4 @@ export class SlideshowComponent implements OnInit {
       });
     });
   }
-  // const storage = getStorage();
-  // const listRef = ref(storage, '/');
-  //   listAll(listRef)
-  //     .then((res) => {
-  //       res.items.forEach((itemRef) => {
-  //         const img = this.renderer.createElement('img');
-  //         img.setAttribute('src', itemRef.fullPath);
-  //         img.setAttribute('alt', '');
-
-  //         this.renderer.appendChild(this.el.nativeElement, img);
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       // Uh-oh, an error occurred!
-  //     });
-  // }
 }

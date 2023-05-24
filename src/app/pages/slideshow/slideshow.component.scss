@@ -46,60 +46,12 @@ img {
   box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
   z-index: 1;
 
-  @for $i from 1 through 36 {
+  @for $i from 1 through 40 {
     &:nth-child(#{$i}) {
       animation-delay: ($i - 1) * -3s;
-    }
-
-
-    &:nth-child(#{$i}) {
-      @include setImage(randomNum(1, 3), randomNum(-10, 90)) // @include setImage(1, 0)
+      @include setImage(randomNum(1, 5), randomNum(-10, 90)) // @include setImage(1, 0)
     }
   }
-
-  // &:nth-child(1) {
-  //   @include setImage(1, 0)
-  // }
-
-  // &:nth-child(1) {
-  //   @include setImage(1, 0)
-  // }
-
-  // &:nth-child(2) {
-  //   @include setImage(3, 10)
-  // }
-
-  // &:nth-child(3) {
-  //   @include setImage(2, 90)
-  // }
-
-  // &:nth-child(4) {
-  //   @include setImage(1, 36)
-  // }
-
-  // &:nth-child(5) {
-  //   @include setImage(3, 62)
-  // }
-
-  // &:nth-child(6) {
-  //   @include setImage(2, 15)
-  // }
-
-  // &:nth-child(7) {
-  //   @include setImage(2, 55)
-  // }
-
-  // &:nth-child(8) {
-  //   @include setImage(3, -20)
-  // }
-
-  // &:nth-child(9) {
-  //   @include setImage(1, 68)
-  // }
-
-  // &:nth-child(10) {
-  //   @include setImage(2, 0)
-  // }
 }
 
 @keyframes float-up-3 {
