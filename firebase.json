@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/clarita2023",
     "ignore": [
       "firebase.json",
       "**/.*",
