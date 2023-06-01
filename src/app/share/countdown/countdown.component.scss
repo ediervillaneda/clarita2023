@@ -9,34 +9,70 @@ $yellow: #F0A202;
 
 $star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 
-.countdown {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-  width: 570px;
-  height: 252px;
-  z-index: 1000;
-  // height: 480px;
+@media (min-width: 768px) {
+  .countdown {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 65vh;
+    height: 45vh;
+    z-index: 1000;
+    // height: 480px;
+  }
+
+  #timer {
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font;
+    font-size: .5em;
+    // letter-spacing: 5px;
+    // margin-top: 25%;
+    margin: 30% 0%;
+  }
+
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    display: inline-block;
+    padding: 15px;
+    width: 75px;
+    border-radius: 5px;
+  }
 }
 
-#timer {
-  color: $white;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: $font;
-  font-size: .5em;
-  letter-spacing: 5px;
-  margin-top: 25%;
-}
+@media (min-device-width: 320px)
+  and (max-device-width: 767px){
+  .countdown {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 25vh;
+    z-index: 1000;
+    // height: 480px;
+  }
 
-.days,
-.hours,
-.minutes,
-.seconds {
-  display: inline-block;
-  padding: 15px;
-  width: 75px;
-  border-radius: 5px;
+  #timer {
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font;
+    font-size: .5em;
+    // letter-spacing: 5px;
+    // margin-top: 25%;
+    margin: 30% 0%;
+  }
+
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    display: inline-block;
+    padding: 10px;
+    width: 65px;
+    border-radius: 5px;
+  }
 }
 
 .days {
@@ -55,8 +91,7 @@ $star: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32%
 .seconds {
   background: $yellow;
 
-  .numbers {
-  }
+  .numbers {}
 }
 
 .numbers {
