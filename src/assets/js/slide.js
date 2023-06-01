@@ -135,7 +135,6 @@ jQuery(function () {
       setTimeout(function () {
         $(svg).css("transform", "rotate(180deg)");
         $path.velocity({ strokeDashoffset: len }, { duration, easing });
-        console.log(len);
       }, rDelay);
 
       setTimeout(function () { $(svg).remove(); }, rDelay + duration + 10);

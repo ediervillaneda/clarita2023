@@ -12,7 +12,6 @@ export class SlideComponent {
 
   subscription: any;
   constructor(private _storage: AngularFireStorage) {
-    console.log(this.number);
     this.getImageList();
   }
 
@@ -32,8 +31,6 @@ export class SlideComponent {
     imageRef
       .getDownloadURL()
       .then(function (url: any) {
-        console.log(url);
-
         // TODO: Display the image on the UI
       })
       .catch(function (error: any) {

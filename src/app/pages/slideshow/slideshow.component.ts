@@ -18,7 +18,6 @@ export class SlideshowComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('Edier');
 
     for (let index = 1; index <= 4; index++) {
       this.Listar(index);
@@ -34,7 +33,6 @@ export class SlideshowComponent implements OnInit {
         const img = this.renderer.createElement('img');
         item.getDownloadURL().then((value) => {
           img.setAttribute('src', value);
-          console.log(cantidad);
         });
         img.setAttribute('alt', '');
         cantidad++;

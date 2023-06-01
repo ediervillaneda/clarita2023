@@ -13,7 +13,6 @@ export class ImagesService {
 
   async getUrl(folder: number = 1): Promise<void> {
     let i = 0;
-    console.log(`wrap${folder}/`);
 
     const listRef = this._storage.ref(`wrap${folder}/`);
 
