@@ -53,9 +53,5 @@ export class CounterService {
     } else {
       this.counter.status = diff <= 0 ? 1 : 0;
     }
-
-    console.log(month);
-
-
   }
 }
