@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+
 @function randomNum($min, $max) {
   $rand: random();
   $randomNum: $min +floor($rand * (($max - $min) + 1));
@@ -46,60 +48,12 @@ img {
   box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
   z-index: 1;
 
-  @for $i from 1 through 36 {
+  @for $i from 1 through 40 {
     &:nth-child(#{$i}) {
       animation-delay: ($i - 1) * -3s;
-    }
-
-
-    &:nth-child(#{$i}) {
-      @include setImage(randomNum(1, 3), randomNum(-10, 90)) // @include setImage(1, 0)
+      @include setImage(randomNum(1, 5), randomNum(-10, 90)) // @include setImage(1, 0)
     }
   }
-
-  // &:nth-child(1) {
-  //   @include setImage(1, 0)
-  // }
-
-  // &:nth-child(1) {
-  //   @include setImage(1, 0)
-  // }
-
-  // &:nth-child(2) {
-  //   @include setImage(3, 10)
-  // }
-
-  // &:nth-child(3) {
-  //   @include setImage(2, 90)
-  // }
-
-  // &:nth-child(4) {
-  //   @include setImage(1, 36)
-  // }
-
-  // &:nth-child(5) {
-  //   @include setImage(3, 62)
-  // }
-
-  // &:nth-child(6) {
-  //   @include setImage(2, 15)
-  // }
-
-  // &:nth-child(7) {
-  //   @include setImage(2, 55)
-  // }
-
-  // &:nth-child(8) {
-  //   @include setImage(3, -20)
-  // }
-
-  // &:nth-child(9) {
-  //   @include setImage(1, 68)
-  // }
-
-  // &:nth-child(10) {
-  //   @include setImage(2, 0)
-  // }
 }
 
 @keyframes float-up-3 {
@@ -156,5 +110,115 @@ img {
   10%,
   100% {
     transform: scale(1);
+  }
+}
+
+
+.container-general {
+  font-family: 'Belleza', sans-serif;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+
+  .card {
+    width: 640px;
+    height: 400px;
+    // position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .outside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .front {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    // background-color: #ffffff;
+  }
+
+  .cake {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .top-layer,
+  .middle-layer,
+  .bottom-layer {
+    height: 80px;
+    width: 200px;
+    background-repeat: repeat;
+    background-size: 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(transparent 50px,
+        #fedbab 50px,
+        #fedbab 60px,
+        transparent 60px),
+      radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+  }
+
+  .middle-layer {
+    transform: scale(0.85);
+    top: 6px;
+  }
+
+  .top-layer {
+    transform: scale(0.7);
+    top: 26px;
+  }
+
+  .candle {
+    height: 45px;
+    width: 15px;
+    background: repeating-linear-gradient(45deg,
+        #fd3018 0,
+        #fd3018 5px,
+        #ffa89e 5px,
+        #ffa89e 10px);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 202px;
+  }
+
+  .candle:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ffa500;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    transform: rotate(45deg);
+    left: -1px;
+  }
+
+  .outside p {
+    font-size: 23px;
+    text-transform: uppercase;
+    // margin-top: 30px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+    background-color: azure;
   }
 }
