@@ -48,11 +48,14 @@ export class CounterService {
       this.counter.daysText = 'dia';
     }
 
-    if (month >= 3) {
+    if (month <= 3) {
       this.counter.status = 2;
     } else {
       this.counter.status = diff <= 0 ? 1 : 0;
     }
+
+    console.log(month);
+
 
   }
 }
